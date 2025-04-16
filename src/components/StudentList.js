@@ -8,9 +8,7 @@ const StudentList = () => {
     useEffect(() => {
         const fetchAllStudents = async () => {
             try {
-                const response = await fetch(
-                    "http://localhost:8080/student/getAll"
-                );
+                const response = await fetch("/student/getAll");
 
                 const json = await response.json();
 
