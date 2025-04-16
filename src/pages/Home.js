@@ -1,7 +1,12 @@
 import React from "react";
+import StudentList from "../components/StudentList";
 
 const Home = () => {
-    return <div>Home page</div>;
+    return (
+        <div>
+            <StudentList />
+        </div>
+    );
 };
 
 export default Home;
