@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import StudentCard from "./StudentCard";
 
 const StudentList = () => {
     //states
@@ -27,7 +28,18 @@ const StudentList = () => {
     useEffect(() => {
         console.log("Students loaded:", students);
     }, [students]);
-    return <div></div>;
+    return (
+        <div>
+            {students &&
+                students.map((student) => (
+                    <StudentCard
+                        key={student.id}
+                        name={student.name}
+                        address={student.address}
+                    />
+                ))}
+        </div>
+    );
 };
 
 export default StudentList;
