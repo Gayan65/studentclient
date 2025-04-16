@@ -21,7 +21,6 @@ const StudentList = () => {
         };
 
         fetchAllStudents();
-        console.log(students);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
