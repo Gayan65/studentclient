@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from "react";
 import StudentCard from "./StudentCard";
+import Loader from "./Loader";
 
 const StudentList = () => {
     //states
     const [students, setStudents] = useState([]);
+    const [loader, setLoader] = useState(null);
 
     //page loads..
     useEffect(() => {
         const fetchAllStudents = async () => {
             try {
+                setLoader(true);
                 const response = await fetch("/student/getAll");
 
                 const json = await response.json();
 
                 if (response.ok) {
+                    setLoader(false);
                     setStudents(json);
                 }
             } catch (error) {
@@ -38,6 +42,7 @@ const StudentList = () => {
                         address={student.address}
                     />
                 ))}
+            {loader && <Loader />}
         </div>
     );
 };
