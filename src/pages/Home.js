@@ -1,11 +1,12 @@
 import React from "react";
 import StudentList from "../components/StudentList";
+import Box from "@mui/material/Box";
 
 const Home = () => {
     return (
-        <div>
+        <Box sx={{ margin: 3 }}>
             <StudentList />
-        </div>
+        </Box>
     );
 };
 
